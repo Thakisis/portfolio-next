@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import SmoothScrolling from "@/components/ui/smooth-scroll";
 import "./globals.css";
+import { CanvasLoader } from "@/components/canvas-loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SmoothScrolling />
+        <CanvasLoader />
+        <div className="z-3 relative">{children}</div>
       </body>
     </html>
   );
