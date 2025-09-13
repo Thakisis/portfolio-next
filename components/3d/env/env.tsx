@@ -4,7 +4,7 @@ import { Suspense } from "react";
 export function Env() {
   return (
     <Suspense>
-      <Environment preset="city" background />
+      <Environment preset="sunset" background />
     </Suspense>
   );
 }
