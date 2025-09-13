@@ -49,8 +49,20 @@ export function MainScene() {
   });
 
   return (
-    <mesh ref={cubeRef} material={material} position={[0, 0, 0]}>
-      <boxGeometry args={[1, 1, 1]} />
-    </mesh>
+    <>
+      <mesh position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <planeGeometry args={[4, 4]} />
+        <meshPhysicalMaterial
+          color="orange"
+          metalness={1}
+          roughness={0}
+          clearcoat={1}
+          clearcoatRoughness={0}
+        />
+      </mesh>
+      <mesh ref={cubeRef} position={[0, 0, 0]} material={material} scale={1}>
+        <boxGeometry args={[1, 1]} />
+      </mesh>
+    </>
   );
 }

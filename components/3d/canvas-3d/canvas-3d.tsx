@@ -5,6 +5,7 @@ import { Controls } from "@/3d/controls";
 import { Env } from "@/3d/env";
 import { MainScene } from "@/3d/scene/main-scene";
 import useThreeStore from "@/store";
+import { Effects } from "../effects";
 
 function Canvas3d() {
   const { setThreeParam } = useThreeStore((state) => state.actions);
@@ -28,6 +29,7 @@ function Canvas3d() {
       style={{ zIndex: 10, backgroundColor: "red" }}
     >
       <color attach="background" args={["#00f"]} />
+      <Effects />
       <Env />
       <MainScene />
       <Controls />
